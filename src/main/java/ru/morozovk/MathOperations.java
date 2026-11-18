@@ -24,12 +24,12 @@ public class MathOperations {
         double c = 23.4;
         double f = 40.3;
 
-        System.out.println("Cумма двух чисел: " +  add(x, y));
+        System.out.println("Сумма двух чисел: " +  add(x, y));
         System.out.println("Разница двух чисел: " +  subtract(x, y));
         System.out.println("Произведение двух чисел: " +  multiply(x, y));
-        System.out.println("Делениие двух чисел: " +  divide(x, y));
+        System.out.println("Деление двух чисел: " +  divide(x, y));
 
-        System.out.println("Максимума двух чисел a и b: " + findMax(a, b));
+        System.out.println("Максимум двух чисел a и b: " + findMax(a, b));
 
         System.out.println("Разницы между двумя числами x и y: " + difference(x, y));
 
@@ -44,13 +44,13 @@ public class MathOperations {
         System.out.println("Гипотенуза: " + findHypotenuse(a1, b1));
         System.out.println("Гипотенуза: " + findHypotenuse(a2, b2));
 
-        System.out.println("Длинна окружности: " + circleCircumference(radius1));
-        System.out.println("Длинна окружности: " + circleCircumference(radius2));
+        System.out.println("Длина окружности: " + circleCircumference(radius1));
+        System.out.println("Длина окружности: " + circleCircumference(radius2));
 
         System.out.println("Процент: " + calculatePercentage(part, total));
 
-        System.out.println("Перевод цельсия в фаренгейта: " + celsiusToFahrenheit(c));
-        System.out.println("Перевод фаренгейта в цельсия: " + fahrenheitToCelsius(f));
+        System.out.println("Перевод Цельсия в Фаренгейта: " + celsiusToFahrenheit(c));
+        System.out.println("Перевод Фаренгейта в Цельсия: " + fahrenheitToCelsius(f));
     }
 
     public static int add(int x, int y){
@@ -90,6 +90,10 @@ public class MathOperations {
     }
 
     public static double averageSpeed(double distance, double time){
+        if (time == 0) {
+            System.out.println("Время не может быть 0");
+            return 0;
+        }
         return distance / time;
     }
 
@@ -101,7 +105,11 @@ public class MathOperations {
         return 2 * Math.PI * radius;
     }
 
-    public static double calculatePercentage(double total, double part){
+    public static double calculatePercentage(double part, double total){
+        if(total == 0){
+            System.out.println("Деление на ноль невозможно");
+            return 0;
+        }
         return (part / total) * 100;
     }
 
